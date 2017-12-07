@@ -10,7 +10,7 @@ var ItemsComponent = (function () {
     }
     ItemsComponent.prototype.ngOnInit = function () {
         this.items = this.itemService.getItems();
-        // this.createUser();
+        this.createUser();
     };
     ItemsComponent.prototype.createUser = function () {
         firebase.createUser({
@@ -18,8 +18,8 @@ var ItemsComponent = (function () {
             password: '123456'
         }).then(function (result) {
             console.log(result);
-        }, function (errorMessage) {
-            console.log(errorMessage);
+        }).catch(function (e) {
+            console.log(e);
         });
     };
     ItemsComponent = __decorate([

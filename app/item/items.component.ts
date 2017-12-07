@@ -18,7 +18,7 @@ export class ItemsComponent implements OnInit {
     ngOnInit(): void {
         this.items = this.itemService.getItems();
 
-        // this.createUser();
+        this.createUser();
     }
 
     createUser() {
@@ -27,8 +27,8 @@ export class ItemsComponent implements OnInit {
             password: '123456'
         }).then((result) => {
             console.log(result);
-        }, (errorMessage) => {
-            console.log(errorMessage);
-        });
+        }).catch(e => {
+            console.log(e);
+        })
     }
 }
